@@ -1,0 +1,10 @@
+body{
+  background: #141414;
+  color: #ffffff;
+  box-sizing: border-box;
+}
+.movie-app > .slide{
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
