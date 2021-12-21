@@ -10,6 +10,7 @@ function App() {
 
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState('');
+  const [fave, setFave] = useState([]);
 
   const getMovies = async (search) => {
 
@@ -28,6 +29,11 @@ function App() {
     getMovies(search);
   }, [search])
 
+  const addFave = (movie) => {
+    const newFave = [...fave, movie];
+    setFave(newFave);
+  };
+
   return (
     <div className='container-fluid movie-app'>
       <div className='row d-flex align-items-center mt-4 mb-4'>
@@ -36,9 +42,12 @@ function App() {
       </div>
 
       <div className='slide'>
-        <MovieList movies = {movies}/>
+        <MovieList movies = {movies} handleAdd = {addFave}/>
       </div>
       <Heading heading='Favorites'/>
+      <div className='slide'>
+        <MovieList movies={fave}/>
+      </div>
     </div>
   );
 }

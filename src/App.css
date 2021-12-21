@@ -1,10 +1,17 @@
 body{
   background: #141414;
   color: #ffffff;
-  box-sizing: border-box;
 }
 .movie-app > .slide{
   display: flex;
-  overflow-x: auto;
+  overflow: auto;
   flex-wrap: nowrap;
+}
+.image-container{
+  position: relative;
+  transition: transform 0.2s;
+}
+.image-container:hover{
+  cursor: pointer;
+  transform: scale(1.1);
 }
